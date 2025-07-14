@@ -14,6 +14,14 @@ libs/
 
 ## Getting started
 
+Create a `.env` file inside `apps/api` with your Zoom credentials:
+
+```
+ZOOM_CLIENT_ID=your_client_id
+ZOOM_CLIENT_SECRET=your_client_secret
+ZOOM_REDIRECT_URI=http://localhost:3001/zoom/callback
+```
+
 Install dependencies for the API and start the server:
 
 ```bash
@@ -22,7 +30,7 @@ npm install
 npm start
 ```
 
-Install dependencies and run the web app:
+Install dependencies and run the web app (Tailwind is preconfigured):
 
 ```bash
 cd apps/web
@@ -30,4 +38,4 @@ npm install
 npm run dev
 ```
 
-The API exposes basic endpoints to store users, meetings and transcripts. These are temporary in-memory stores meant as a starting point for development.
+The API exposes endpoints to store users, meetings, transcripts and tasks. Zoom OAuth is stubbed via `/zoom/auth` and `/zoom/callback` routes. All data resides in memory and resets on restart.
