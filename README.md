@@ -27,6 +27,7 @@ Install dependencies and run the web app:
 ```bash
 cd apps/web
 npm install
+echo "VITE_API_URL=http://localhost:3001" > .env
 npm run dev
 ```
 
