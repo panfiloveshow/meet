@@ -14,7 +14,28 @@ libs/
 
 ## Getting started
 
-Install dependencies for the API and start the server:
+Install dependencies for the API and start the server. The API now requires a PostgreSQL database.
+
+### Database setup
+
+Create a PostgreSQL database and user. Then copy `.env.example` and adjust the connection variables:
+
+```bash
+cd apps/api
+cp .env.example .env
+```
+The `.env` file should define variables like:
+
+```
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=<user>
+DB_PASSWORD=<password>
+DB_NAME=<database>
+PORT=3001
+```
+
+Ensure a PostgreSQL instance is running and the credentials in `.env` are correct. After that install dependencies and start the server:
 
 ```bash
 cd apps/api
@@ -31,4 +52,4 @@ echo "VITE_API_URL=http://localhost:3001" > .env
 npm run dev
 ```
 
-The API exposes basic endpoints to store users, meetings and transcripts. These are temporary in-memory stores meant as a starting point for development.
+The API exposes CRUD endpoints backed by PostgreSQL to store users, meetings and transcripts.
