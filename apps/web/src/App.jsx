@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 
+/**
+ * Main application component displaying Vite and React logos, a counter button, and informational text.
+ * 
+ * Renders interactive UI elements including a button that increments a counter and links to Vite and React documentation.
+ */
 function App() {
   const [meetings, setMeetings] = useState([]);
 
